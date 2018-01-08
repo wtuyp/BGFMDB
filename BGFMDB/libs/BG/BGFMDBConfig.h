@@ -12,18 +12,18 @@
 // 过期方法注释
 #define BGFMDBDeprecated(instead) NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, instead)
 
-#define bg_primaryKey @"bg_id"
-#define bg_createTimeKey @"bg_createTime"
-#define bg_updateTimeKey @"bg_updateTime"
+#define bg_primaryKey       @"bg_id"
+#define bg_createTimeKey    @"bg_createTime"
+#define bg_updateTimeKey    @"bg_updateTime"
 
 //keyPath查询用的关系，bg_equal:等于的关系；bg_contains：包含的关系.
-#define bg_equal @"Relation_Equal"
+#define bg_equal    @"Relation_Equal"
 #define bg_contains @"Relation_Contains"
 
-#define bg_complete_B void(^_Nullable)(BOOL isSuccess)
-#define bg_complete_I void(^_Nullable)(bg_dealState result)
-#define bg_complete_A void(^_Nullable)(NSArray* _Nullable array)
-#define bg_changeBlock void(^_Nullable)(bg_changeState result)
+#define bg_complete_B   void(^_Nullable)(BOOL isSuccess)
+#define bg_complete_I   void(^_Nullable)(bg_dealState result)
+#define bg_complete_A   void(^_Nullable)(NSArray* _Nullable array)
+#define bg_changeBlock  void(^_Nullable)(bg_changeState result)
 
 typedef NS_ENUM(NSInteger,bg_changeState){//数据改变状态
     bg_insert,//插入

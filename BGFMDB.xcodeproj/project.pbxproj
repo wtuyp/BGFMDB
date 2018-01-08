@@ -34,6 +34,7 @@
 		D78A0D7C1E70F92400511A6D /* stockController.m in Sources */ = {isa = PBXBuildFile; fileRef = D78A0D7A1E70F92400511A6D /* stockController.m */; };
 		D78A0D7D1E70F92400511A6D /* stockController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78A0D7B1E70F92400511A6D /* stockController.xib */; };
 		D78A0D801E70F95700511A6D /* stockModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D78A0D7F1E70F95700511A6D /* stockModel.m */; };
+		EB1DD0C61FFF61A9007F25C4 /* BGDBCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1DD0C51FFF61A9007F25C4 /* BGDBCondition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,8 @@
 		D78A0D7E1E70F95700511A6D /* stockModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stockModel.h; sourceTree = "<group>"; };
 		D78A0D7F1E70F95700511A6D /* stockModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = stockModel.m; sourceTree = "<group>"; };
 		D7E1C0761E8F885300F0BA5F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		EB1DD0C41FFF61A9007F25C4 /* BGDBCondition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGDBCondition.h; sourceTree = "<group>"; };
+		EB1DD0C51FFF61A9007F25C4 /* BGDBCondition.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BGDBCondition.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				078119D11F96F66F008D9288 /* BGFMDB.h */,
+				078119751F960E88008D9288 /* NSObject+BGModel.h */,
+				078119761F960E88008D9288 /* NSObject+BGModel.m */,
 				0781196E1F960E88008D9288 /* BGFMDBConfig.h */,
 				0781196F1F960E88008D9288 /* BGModelInfo.h */,
 				078119701F960E88008D9288 /* BGModelInfo.m */,
@@ -163,10 +168,10 @@
 				078119721F960E88008D9288 /* BGTool.m */,
 				078119731F960E88008D9288 /* NSCache+BGCache.h */,
 				078119741F960E88008D9288 /* NSCache+BGCache.m */,
-				078119751F960E88008D9288 /* NSObject+BGModel.h */,
-				078119761F960E88008D9288 /* NSObject+BGModel.m */,
 				078119CD1F96ED4A008D9288 /* BGDB.h */,
 				078119CE1F96ED4A008D9288 /* BGDB.m */,
+				EB1DD0C41FFF61A9007F25C4 /* BGDBCondition.h */,
+				EB1DD0C51FFF61A9007F25C4 /* BGDBCondition.m */,
 			);
 			path = BG;
 			sourceTree = "<group>";
@@ -454,6 +459,7 @@
 				D76F30321E777AB10053675F /* Animal.m in Sources */,
 				D781DEBC1D9A5506007B6FB4 /* people.m in Sources */,
 				078119CF1F96ED4A008D9288 /* BGDB.m in Sources */,
+				EB1DD0C61FFF61A9007F25C4 /* BGDBCondition.m in Sources */,
 				D78A0D801E70F95700511A6D /* stockModel.m in Sources */,
 				D76F302E1E7777FD0053675F /* dictToModelController.m in Sources */,
 			);

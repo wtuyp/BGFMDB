@@ -11,12 +11,12 @@
 
 #define bg_completeBlock(obj) !complete?:complete(obj);
 
-#define BG @"BG_"
+#define BG              @"BG_"
 #define bg_tableNameKey @"bg_tableName"
-#define bg_rowid @"rowid"
+#define bg_rowid        @"rowid"
 
-#define bg_uniqueKeysSelector NSSelectorFromString(@"bg_uniqueKeys")
-#define bg_ignoreKeysSelector NSSelectorFromString(@"bg_ignoreKeys")
+#define bg_uniqueKeysSelector       NSSelectorFromString(@"bg_uniqueKeys")
+#define bg_ignoreKeysSelector       NSSelectorFromString(@"bg_ignoreKeys")
 #define bg_unionPrimaryKeysSelector NSSelectorFromString(@"bg_unionPrimaryKeys")
 
 typedef NS_ENUM(NSInteger,bg_getModelInfoType){//过滤数据类型
@@ -131,4 +131,5 @@ typedef NS_ENUM(NSInteger,bg_getModelInfoType){//过滤数据类型
 +(void)setStringWithKey:(NSString* _Nonnull)key value:(NSString* _Nonnull)value;
 +(NSInteger)getIntegerWithKey:(NSString* _Nonnull)key;
 +(void)setIntegerWithKey:(NSString* _Nonnull)key value:(NSInteger)value;
+
 @end

@@ -107,6 +107,12 @@
 //    p.name = @"天朝";
 //    [p bg_updateWhere:where];
     
+    BGDBCondition *where = [[BGDBCondition alloc] init];
+    where.where(@"age").equal(@(99));
+    p.name = @"改了年纪";
+    [p bg_updateWhere:where.sql];
+
+    
     /**
      使用SQL语句设置更新.
      根据某个属性值去更改某个属性值，此处是当name等于@"天朝"时,设置age=100.

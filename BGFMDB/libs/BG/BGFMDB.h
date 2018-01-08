@@ -10,5 +10,6 @@
 #define BGFMDB_h
 
 #import "NSObject+BGModel.h"
+#import "BGDBCondition.h"
 
 #endif /* BGFMDB_h */
