@@ -29,10 +29,10 @@ typedef BGDBCondition *(^AppendNoting)(void);
 @interface BGDBCondition : NSString
 
 @property(nonatomic, copy) NSString *sql;
+//WHERE ... (AND / OR ...) GROUP BY ... (HAVING SUM(...)) ORDER BY ... LIMIT ... OFFSET ...
 
 
 
-//WHERE ... (AND / OR ...)
 - (AppendString)where;
 //并
 - (AppendString)and;
@@ -61,13 +61,7 @@ typedef BGDBCondition *(^AppendNoting)(void);
 //LIKE x%x
 - (AppendString)likeContain;
 
-//排序
-- (AppendString)orderByAec;
-- (AppendString)orderByDesc;
 
-
-//WHERE 与 ORDER BY 之间
-//GROUP BY ... (HAVING SUM(...))
 //分组
 - (AppendString)groupBy;
 //HAVING
@@ -82,6 +76,10 @@ typedef BGDBCondition *(^AppendNoting)(void);
 - (AppendString)sum;
 //数量
 - (AppendString)count;
+
+//排序
+- (AppendString)orderByAec;
+- (AppendString)orderByDesc;
 
 - (AppendInt)limit;
 - (AppendInt)offset;

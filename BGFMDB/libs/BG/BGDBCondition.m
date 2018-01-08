@@ -62,35 +62,35 @@
 
 - (AppendObject)unequal {
     return AppendObject(object) {
-        [self appendString:[NSString stringWithFormat:@" <> '%@'", object]];
+        [self appendString:[NSString stringWithFormat:@" <> %@", bg_sqlValue(object)]];
         return self;
     };
 }
 
 - (AppendObject)lessThan {
     return AppendObject(object) {
-        [self appendString:[NSString stringWithFormat:@" < '%@'", object]];
+        [self appendString:[NSString stringWithFormat:@" < %@", bg_sqlValue(object)]];
         return self;
     };
 }
 
 - (AppendObject)lessEqualThan {
     return AppendObject(object) {
-        [self appendString:[NSString stringWithFormat:@" <= '%@'", object]];
+        [self appendString:[NSString stringWithFormat:@" <= %@", bg_sqlValue(object)]];
         return self;
     };
 }
 
 - (AppendObject)moreThan {
     return AppendObject(object) {
-        [self appendString:[NSString stringWithFormat:@" > '%@'", object]];
+        [self appendString:[NSString stringWithFormat:@" > %@", bg_sqlValue(object)]];
         return self;
     };
 }
 
 - (AppendObject)moreEqualThan {
     return AppendObject(object) {
-        [self appendString:[NSString stringWithFormat:@" >= '%@'", object]];
+        [self appendString:[NSString stringWithFormat:@" >= %@", bg_sqlValue(object)]];
         return self;
     };
 }
@@ -124,25 +124,10 @@
     };
 }
 
-#pragma mark - ORDER
-- (AppendString)orderByAec {
-    return AppendString(string) {
-        [self appendString:[NSString stringWithFormat:@" ORDER BY %@ AEC", string]];
-        return self;
-    };
-}
-
-- (AppendString)orderByDesc {
-    return AppendString(string) {
-        [self appendString:[NSString stringWithFormat:@" ORDER BY %@ DESC ", string]];
-        return self;
-    };
-}
-
 #pragma mark - GROUP BY
 - (AppendString)groupBy {
     return AppendString(string){
-        [self appendString:[NSString stringWithFormat:@" GROUP BY %@", string]];
+        [self appendString:[NSString stringWithFormat:@" GROUP BY %@", bg_sqlKey(string)]];
         return self;
     };
 }
@@ -156,28 +141,28 @@
 
 - (AppendString)max {
     return AppendString(string)  {
-        [self appendString:[NSString stringWithFormat:@" MAX(%@) ", string]];
+        [self appendString:[NSString stringWithFormat:@" MAX(%@) ", bg_sqlKey(string)]];
         return self;
     };
 }
 
 - (AppendString)min {
     return AppendString(string) {
-        [self appendString:[NSString stringWithFormat:@" MIN(%@) ", string]];
+        [self appendString:[NSString stringWithFormat:@" MIN(%@) ", bg_sqlKey(string)]];
         return self;
     };
 }
 
 - (AppendString)avg {
     return AppendString(string) {
-        [self appendString:[NSString stringWithFormat:@" AVG(%@) ", string]];
+        [self appendString:[NSString stringWithFormat:@" AVG(%@) ", bg_sqlKey(string)]];
         return self;
     };
 }
 
 - (AppendString)sum {
     return AppendString(string) {
-        [self appendString:[NSString stringWithFormat:@" SUM(%@) ", string]];
+        [self appendString:[NSString stringWithFormat:@" SUM(%@) ", bg_sqlKey(string)]];
         return self;
     };
 }
@@ -187,8 +172,23 @@
         if (!string) {
             [self appendString:@" COUNT(*) "];
         }else{
-            [self appendString:[NSString stringWithFormat:@" COUNT(%@) ", string]];
+            [self appendString:[NSString stringWithFormat:@" COUNT(%@) ", bg_sqlKey(string)]];
         }
+        return self;
+    };
+}
+
+#pragma mark - ORDER
+- (AppendString)orderByAec {
+    return AppendString(string) {
+        [self appendString:[NSString stringWithFormat:@" ORDER BY %@ AEC", bg_sqlKey(string)]];
+        return self;
+    };
+}
+
+- (AppendString)orderByDesc {
+    return AppendString(string) {
+        [self appendString:[NSString stringWithFormat:@" ORDER BY %@ DESC ", bg_sqlKey(string)]];
         return self;
     };
 }
