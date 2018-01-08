@@ -78,7 +78,7 @@ typedef BGDBCondition *(^AppendNoting)(void);
 - (AppendString)count;
 
 //排序
-- (AppendString)orderByAec;
+- (AppendString)orderByAsc;
 - (AppendString)orderByDesc;
 
 - (AppendInt)limit;

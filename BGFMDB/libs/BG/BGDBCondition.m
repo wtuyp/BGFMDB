@@ -179,9 +179,9 @@
 }
 
 #pragma mark - ORDER
-- (AppendString)orderByAec {
+- (AppendString)orderByASc {
     return AppendString(string) {
-        [self appendString:[NSString stringWithFormat:@" ORDER BY %@ AEC", bg_sqlKey(string)]];
+        [self appendString:[NSString stringWithFormat:@" ORDER BY %@ ASC", bg_sqlKey(string)]];
         return self;
     };
 }
